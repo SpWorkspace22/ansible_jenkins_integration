@@ -2,5 +2,4 @@ dev_servers:
  hosts:
   dev_server_1:
    ansible_host: 192.168.1.7
-   ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 
