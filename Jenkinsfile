@@ -17,14 +17,10 @@ pipeline {
     }
     post {
         success {
-            steps {
                 sh "echo Pipeline Passed."
-            }
         }
         always {
-            steps {
                 sh "echo Job Ran."
-            }
         }
     }
 }
