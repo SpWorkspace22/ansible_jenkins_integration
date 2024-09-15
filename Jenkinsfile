@@ -9,7 +9,7 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'Ansible', keyFileVariable: 'ansible-connection')]) {
                     ansiColor('xterm') {
-                        ansiblePlaybook(credentialsId: 'ansible-connection-key', inventory: 'inventory/Development/Dev_Server.yml', playbook: 'Host_Test.yml')
+                        ansiblePlaybook(credentialsId: 'ansible-connection-key', inventory: 'inventory/Development/Dev_Server.yml', playbook: 'Host_Test.yml',colorized:true)
                     }
                 }
             }
