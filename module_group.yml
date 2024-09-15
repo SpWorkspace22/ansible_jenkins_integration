@@ -1,0 +1,8 @@
+- name: Demo Group Module
+  hosts: dev_servers
+  become: true
+  tasks: 
+   - name: Check Developer Group is present or not
+     ansible.builtin.group:
+      name: developer
+      state: present

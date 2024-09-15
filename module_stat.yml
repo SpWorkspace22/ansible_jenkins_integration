@@ -1,0 +1,6 @@
+- name: Demo Stat Module
+  hosts: dev_servers
+  tasks:
+   - name: Get Stat Of Script.sh file
+     ansible.builtin.stat: 
+      path: ./script.sh

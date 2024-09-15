@@ -1,0 +1,7 @@
+- name: Get Url Module Demo
+  hosts: dev_servers
+  tasks:
+   - name: Dowmload Google HomePage file
+     ansible.builtin.get_url:
+      url: https://www.google.co.in
+      dest: ./

@@ -1,0 +1,19 @@
+- name: Demo Script Module
+  hosts: dev_servers
+  become: true
+  tasks:
+   - name: Get Hostname & Python Version
+     ansible.builtin.script:
+      cmd: ./script.sh
+     
+   - name: Copy File
+     ansible.builtin.copy:
+      src: ./script.sh
+      dest: ./script.sh
+      mode: 0755
+      
+   - name: Run Shell Cmd
+     ansible.builtin.shell: ./script.sh
+     args:
+      executable: /bin/bash
+      

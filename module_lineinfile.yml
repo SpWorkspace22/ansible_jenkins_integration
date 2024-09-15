@@ -1,0 +1,16 @@
+- name: Demo For Lineinfile Module
+  hosts: dev_servers
+  tasks:
+   - name: Replace A line
+     ansible.builtin.lineinfile:
+      path: ./sample_file.txt
+      regex: '^Lorem'
+      line: This is Replaced Line
+      state: present
+   
+   - name: Replace Listening Port
+     ansible.builtin.lineinfile:
+      path: ./sample_file.txt
+      regex: 'Listen'
+      insertafter: '^#Listen'
+      line: Listen:8080

@@ -1,0 +1,11 @@
+- name: Demo Of Getent Module
+  hosts: dev_servers
+  tasks:
+   - name: Check Grp is present or not
+     ansible.builtin.getent:
+      database: group
+      key: developer
+      
+   - name: Print Group Value
+     ansible.builtin.debug:
+      var: ansible_facts.getent_group
