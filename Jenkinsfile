@@ -14,16 +14,16 @@ pipeline {
                 }
             }
         }
-        post {
-            success {
-                steps {
-                    sh "echo Pipeline Passed."
-                }
+    }
+    post {
+        success {
+            steps {
+                sh "echo Pipeline Passed."
             }
-            always {
-                steps {
-                    sh "echo Job Ran."
-                }
+        }
+        always {
+            steps {
+                sh "echo Job Ran."
             }
         }
     }
