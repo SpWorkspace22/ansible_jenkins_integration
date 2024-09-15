@@ -1,0 +1,15 @@
+- name: Install & Configure Nginx Server
+  hosts: dev_servers
+  become: true
+  tasks:
+   - name: Install nginx server
+     ansible.builtin.apt:
+      name: nginx
+      state: present
+      update_cache: yes
+      
+   - name: copy index.html to nginx server
+     ansible.builtin.copy:
+      src: ./resources/index.html
+      dest: /var/www/html/index.html
+      
