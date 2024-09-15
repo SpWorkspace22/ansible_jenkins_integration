@@ -1,0 +1,5 @@
+- name: Check Remote Machine Is up
+  hosts: dev_servers
+  tasks:
+   - name: Ping Remote Host Machine
+     ansible.builtin.ping:
