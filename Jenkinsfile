@@ -7,9 +7,9 @@ pipeline {
     stages {
         stage("Test Remote Machine Connection"){
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'ansible_vagrant', keyFileVariable: 'ansible_connection', usernameVariable: 'vagrant')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'ansible_vagrant', keyFileVariable: 'ansible-connection')]) {
                     ansiColor('xterm') {
-                        ansiblePlaybook colorized: true, credentialsId: 'ansible_connection-key', inventory: './inventory/Development/Dev_Server.yml', playbook: './Host_Test.yml', vaultTmpPath: ''
+                        ansiblePlaybook(credentialsId: 'ansible-connection-key', inventory: 'inventory/Development/Dev_Server.yml', playbook: 'Host_Test.yml')
                     }
                 }
             }
