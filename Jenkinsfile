@@ -9,7 +9,7 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'ansible_vagrant', keyFileVariable: 'ansible_vagrant')]) {
                     ansiColor('xterm') {
-                       ansiblePlaybook(credentialsId: 'ansible_vagrant', inventory: 'inventory/Development/Dev_Server.yml', playbook: 'module_script.yml',colorized:true, extras: '-vv')
+                       ansiblePlaybook(credentialsId: 'ansible_vagrant', inventory: 'inventory/Development/Dev_Server.yml', playbook: 'ansible_nginx.yml',colorized:true, extras: '-v')
                     }
                 }
             }
